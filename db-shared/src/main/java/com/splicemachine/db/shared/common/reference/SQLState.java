@@ -1978,6 +1978,7 @@ public interface SQLState {
 	String FILESYSTEM_URI_EXCEPTION				    				= "EXT25";
 	String FILESYSTEM_IO_EXCEPTION				    				= "EXT26";
 	String NO_ARRAY_IN_PRIMARY_KEY				    				= "EXT27";
+	String TABLE_NOT_PINNED				    						= "EXT28";
 
 
 }
