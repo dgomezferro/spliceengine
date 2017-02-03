@@ -22,6 +22,7 @@ import com.splicemachine.utils.SpliceLogUtils;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Random;
 
 /**
@@ -40,8 +41,8 @@ class ExportPermissionCheck {
         testFile = new ExportFile(exportParams, testFileTaskId,dfs);
     }
 
-    ExportPermissionCheck(ExportParams exportParams) throws IOException {
-        this(exportParams,SIDriver.driver().getFileSystem(exportParams.getDirectory()));
+    ExportPermissionCheck(ExportParams exportParams) throws IOException, URISyntaxException {
+        this(exportParams,SIDriver.driver().getSIEnvironment().fileSystem(exportParams.getDirectory()));
     }
 
     void verify() throws IOException, StandardException {
